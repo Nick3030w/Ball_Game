@@ -21,4 +21,16 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(moveInput.x, 0.0f, moveInput.y);
         rb.AddForce(movement);
     }
+    void Awake()
+    {
+        controls = new InputSystem_Actions();
+        controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
+    }
+    void OnEnable(){
+        controls.Enable();
+    }
+    void OnDisable(){
+        controls.Disable();
+    }
 }
