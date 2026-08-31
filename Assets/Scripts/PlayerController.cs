@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed;
     private InputSystem_Actions controls;
     private Rigidbody rb;
     private Vector2 moveInput;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = new Vector3(moveInput.x, 0.0f, moveInput.y);
-        rb.AddForce(movement);
+        rb.AddForce(movement * speed);
     }
     void Awake()
     {
