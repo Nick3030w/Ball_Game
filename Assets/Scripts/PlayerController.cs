@@ -35,4 +35,16 @@ public class PlayerController : MonoBehaviour
     void OnDisable(){
         controls.Disable();
     }
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag("Collectable"))
+        {
+            //El objeto es recolectable
+            other.gameObject.SetActive(false);
+        }
+        else
+        {
+            //El objeto NO es recolectable
+            
+        }
+    }
 }
