@@ -6,11 +6,17 @@ public class PlayerController : MonoBehaviour
     private InputSystem_Actions controls;
     private Rigidbody rb;
     private Vector2 moveInput;
+    public Transform particles;
+    private ParticleSystem particlesSystem;
+    private Vector3 position;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb=GetComponent<Rigidbody>(); 
+        particlesSystem = particles.GetComponent<ParticleSystem>();
+        particlesSystem.Stop();
+
     }
 
     // Update is called once per frame
@@ -39,12 +45,17 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Collectable"))
         {
             //El objeto es recolectable
+            
+            position = other.gameObject.transform.position;
+            particles.position = position;
+            particlesSystem = particles.GetComponent<ParticleSystem>();
+            particlesSystem.Play();
             other.gameObject.SetActive(false);
         }
         else
         {
             //El objeto NO es recolectable
-            
+
         }
     }
 }
