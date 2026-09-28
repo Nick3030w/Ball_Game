@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Transform particles;
     private ParticleSystem particlesSystem;
     private Vector3 position;
+    private int counter;
+    public TextMeshProUGUI textCounter;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,6 +19,7 @@ public class PlayerController : MonoBehaviour
         rb=GetComponent<Rigidbody>(); 
         particlesSystem = particles.GetComponent<ParticleSystem>();
         particlesSystem.Stop();
+        textCounter.text = "Counter: " + counter.ToString();
 
     }
 
@@ -51,6 +55,9 @@ public class PlayerController : MonoBehaviour
             particlesSystem = particles.GetComponent<ParticleSystem>();
             particlesSystem.Play();
             other.gameObject.SetActive(false);
+
+            counter = counter +1;
+            textCounter.text = "Counter: " + counter.ToString();
         }
         else
         {
