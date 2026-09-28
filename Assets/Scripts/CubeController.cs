@@ -17,4 +17,8 @@ public class CubeController : MonoBehaviour
     {
         transform.Rotate(new Vector3(45, 45, 45));
     }
+    public void ScaleCube(float value)
+    {
+        transform.localScale = new Vector3(value,value,value);
+    }
 }
