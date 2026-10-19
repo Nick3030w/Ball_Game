@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
             particlesSystem = particles.GetComponent<ParticleSystem>();
             particlesSystem.Play();
             other.gameObject.SetActive(false);
+            StartCoroutine(StopParticles(particlesSystem));
 
             counter = counter +1;
             textCounter.text = "Counter: " + counter.ToString();
@@ -64,5 +66,10 @@ public class PlayerController : MonoBehaviour
             //El objeto NO es recolectable
 
         }
+    }
+    public IEnumerator StopParticles(ParticleSystem particleSystem)
+    {
+        yield return new WaitForSecondsRealtime(5);
+        particlesSystem.Stop();
     }
 }
