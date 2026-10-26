@@ -1074,6 +1074,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+--- !u!4 &815208879 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4388947112716342, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  m_PrefabInstance: {fileID: 815208878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1372,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1347131779}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &883777348
+--- !u!114 &883777341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1376,13 +1381,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 883777340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecfc6eaa866487a4c982ed1e46b996c8, type: 3}
+  m_Script: {fileID: 11500000, guid: f3ac5558df8764444a3560112738f483, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  energyExplosion: {fileID: 1269866879}
-  bigExplosion: {fileID: 1851756930}
-  duracionEnergy: 1.5
-  duracionBig: 1.5
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  speed: 2
+  particles: {fileID: 815208879}
   textCounter: {fileID: 862427583}
 --- !u!1 &951346225
 GameObject:
@@ -1515,11 +1518,6 @@ PrefabInstance:
 --- !u!4 &1269866877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4865135451303388, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
-  m_PrefabInstance: {fileID: 1269866876}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1269866879 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198856239026640498, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
   m_PrefabInstance: {fileID: 1269866876}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1311877642
@@ -1713,7 +1711,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 883777348}
+      addedObject: {fileID: 883777341}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!1 &1392072067
 GameObject:
