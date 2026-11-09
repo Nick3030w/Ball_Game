@@ -1388,6 +1388,7 @@ MonoBehaviour:
   speed: 2
   particles: {fileID: 815208879}
   textCounter: {fileID: 862427583}
+  power: {fileID: 997058695}
 --- !u!4 &883777342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -2133,6 +2134,7 @@ MonoBehaviour:
   speed: 8
   particles: {fileID: 1269866877}
   textCounter: {fileID: 862427583}
+  power: {fileID: 0}
 --- !u!114 &1392072074
 MonoBehaviour:
   m_ObjectHideFlags: 0

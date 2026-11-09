@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private int counter;
     public TextMeshProUGUI textCounter;
     private Animator anim;
+    public GameObject power;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -82,18 +83,24 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator StopParticles(ParticleSystem particleSystem)
     {
+           
         yield return new WaitForSecondsRealtime(5);
-        particlesSystem.Stop();
+        
+        anim.SetBool("isSendingMagic", false);        particlesSystem.Stop();
+    
     }
     void Animar()
     {
-        anim.SetBool("isSendingMagic", true);
+       
         StartCoroutine(RestartAnimation());
     }
 
     public IEnumerator RestartAnimation()
     {
+        anim.SetBool("isSendingMagic", true); 
         yield return new WaitForSecondsRealtime(1.5f);
+        power.transform.position = transform.position;
+        power.SendMessage("Shoot");
         anim.SetBool("isSendingMagic", false);
     }
 }
